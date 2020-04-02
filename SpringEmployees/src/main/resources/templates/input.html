@@ -1,0 +1,18 @@
+<html xmlns:th= "http://www.thymeleaf.or g" >
+<head>
+<meta charset="UTF-8">
+ <title>Insert New Employee</title> 
+ <head>
+ <body> 
+<form name="myForm" th:object="${newEmployee}" th:action="@{/update/{id}(id=${newEmployee.id})}"  onsubmit="return validateForm()" method=POST>
+<!-- attribute to the submit button, prevents validation on form elements -->
+First Name: <input name="first_name" size="20" th:field="*{first_name}" required><br />
+Last Number: <input name="last_name" size="20" th:field="*{last_name}"><br />
+Salary: <input name="department.salary" size="20" th:field="*{department.salary}"><br />
+Department: <input name="department.department_name" size="20" th:field="*{department.department_name}"><br />
+Job Title: <input name="department.job_title" size="20" th:field="*{department.job_title}"><br />
+<input name="Submit" type="submit" value="submit" />
+</form>
+<a href="../viewAll">View All Employees</a>
+</body>
+</html>
